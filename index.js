@@ -34,8 +34,8 @@ const rest = new Discord.REST({ version: '10' }).setToken(process.env.TOKEN);
 (async () => {
 	try {
 		console.log(chalk.bgYellow("[SLASH (/)]") + chalk.yellow(" Started refreshing slash's"));
-
-		await rest.put(
+    
+    await rest.put(
 			Discord.Routes.applicationCommands(clientId),
 			{ body: commands },
 		);

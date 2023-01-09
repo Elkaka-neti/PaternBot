@@ -3,7 +3,6 @@ const chalk = require('chalk');
 const {readdir} = require('fs');
 
 module.exports = async(client, interaction) => {
-  
  
 readdir(process.cwd() + "/INTERACTIONS", (err, dirns) => {
 if (err) console.log(err);
