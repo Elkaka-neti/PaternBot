@@ -28,17 +28,26 @@ module.exports = async(interaction, client) => {
       "value": "***Você tem mais 50 parcerias disponíveis [atualize para premium](https://paternbot.ml/premium)***"
     }
     )
-    .setColor("#398ce6")
+    .setColor("#398ce6");
     
     const row = new Discord.ActionRowBuilder()
 			.addComponents(
 				new Discord.ButtonBuilder()
-					.setCustomId('primary')
-					.setLabel('Click me!')
+					.setLabel('Descobrir servidores')
 					.setURL("https://paternbot.ml/servers/discover")
-					.setStyle(ButtonStyle.Link),
+        .setEmoji("974367537368301600")
+					.setStyle(Discord.ButtonStyle.Link),
 			);
+			
+			const row1 = new Diacord.ActionRowBuilder()
+			.addComponents(
+			  new Discord.ButtonBuilder()
+			  .setCustomId("randomServer")
+			  .setLabel("Servidor aleatório")
+			  .setEmoji("961678055565328475")
+			  .setStyle(Discord.ButtonStyle.Primary),
+			  );
 
     
-    interaction.reply({embeds: [embed], components: [row]})
+    await interaction.reply({embeds: [embed], components: [row,row1]})
 }
