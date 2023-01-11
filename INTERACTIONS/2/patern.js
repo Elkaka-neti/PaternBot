@@ -30,5 +30,15 @@ module.exports = async(interaction, client) => {
     )
     .setColor("#398ce6")
     
-    interaction.reply({embeds: [embed]})
+    const row = new Discord.ActionRowBuilder()
+			.addComponents(
+				new Discord.ButtonBuilder()
+					.setCustomId('primary')
+					.setLabel('Click me!')
+					.setURL("https://paternbot.ml/servers/discover")
+					.setStyle(ButtonStyle.Link),
+			);
+
+    
+    interaction.reply({embeds: [embed], components: [row]})
 }
